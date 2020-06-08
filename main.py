@@ -1,14 +1,14 @@
 # import required libraries
 import pandas as pd
 
-# visualization library
+# visualization libraries
 import plotly.express as px
 import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 # read csv file
-data = pd.read_csv('data_train.csv')
+data = pd.read_csv('data_test.csv')
 
 # check column
 print(data.columns)
@@ -19,30 +19,26 @@ print("\nnumber of rows : {0}, number of columns : {1}".format(shape[0], shape[1
 
 # check for missing or null values
 print("\n", data.isnull().any())
-# we have two columns with missing values i.e 'Item_Weight' and 'Outlet_Size'
 print("\nTotal numbers of missing values in column 'Item_Weight':{}".format(data['Item_Weight'].isnull().sum()))
-# 976 values missing in 'Item_Weight'
 print("Total numbers of missing values in column 'Outlet_Size':{}".format(data['Outlet_Size'].isnull().sum()))
-# 1606 values missing in 'Outlet_Size'
+print("\nDF info", data.info())
+print("\nDF describe", data.describe())
 
-print("\n", data.info())
-print("\n", data.describe())
-
-# now we have missing values in 'outlet_size'
+# missing values in 'outlet_size'
 print(data['Outlet_Size'].value_counts())
 print(data['Outlet_Identifier'].value_counts())
 print(data['Outlet_Type'].value_counts())
 
 # check correlation of columns with each other
 corrMatrix = data.corr()
-sns.heatmap(corrMatrix, annot=True)
-plt.show()
-# we can see 'Item_Weight' is more correlated to 'Item_MRP' than any other column i.e 0.05
+# sns.heatmap(corrMatrix, annot=True)
+# plt.show()
+# we can see 'Item_MRP' is more correlated to 'Item_Sales' than any other column i.e 0.57
 
 
 # histogram('Item_MRP')
-fig = px.histogram(data, x="Item_MRP")
-fig.show()
+# fig = px.histogram(data, x="Item_MRP")
+# fig.show()
 # mrp distribute between 30 to 270
 
 # let's check mean of 'item weight' in different range of 'item mrp'
@@ -64,7 +60,7 @@ fig = px.scatter(data, x='Outlet_Location_Type', y='Outlet_Size')
 fig.show()
 # from above scatter plot we can say if 'Supermarket type 2' and 'Supermarket type 3'
 # then it's always 'medium' in 'outlet size', if it's 'Grocery Store' then it's always 'Small',
-# if it's 'Outlet_Location_Type' is 'Tier 2' then it's always 'Small' in 'Outlet_Size'
+# if 'Outlet_Location_Type' is 'Tier 2' then it's always 'Small' in 'Outlet_Size'
 
 
 def impute_size(cols):
@@ -87,3 +83,11 @@ def impute_size(cols):
 # apply function
 data['Outlet_Size'] = data[['Outlet_Size', 'Outlet_Type', 'Outlet_Location_Type']].apply(impute_size, axis=1)
 
+# no missing values in DF
+
+# bar chart (Outlet_Type/Item_Outlet_Sales)
+# fig = px.scatter(data, x='Item_MRP', y='Item_Outlet_Sales')
+# fig.show()
+
+fig = px.box(data, x='Outlet_Size', y='Item_Outlet_Sales')
+fig.show()
