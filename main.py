@@ -28,6 +28,7 @@ print("\nDF describe", data.describe())
 print(data['Outlet_Size'].value_counts())
 print(data['Outlet_Identifier'].value_counts())
 print(data['Outlet_Type'].value_counts())
+data['Item_MRP'] = data['Item_MRP'].apply(lambda x: round(x))
 
 # check correlation of columns with each other
 corrMatrix = data.corr()
@@ -54,10 +55,10 @@ print(data[(data['Item_MRP'] > 200) & (data['Item_MRP'] <= 270)][['Item_MRP', 'I
 data.fillna({'Item_Weight': 12.00}, inplace=True)
 
 # scatter chart('Outlet_Location_Type' / 'Outlet_Size')
-fig = px.scatter(data, x='Outlet_Size', y='Outlet_Type')
-fig.show()
-fig = px.scatter(data, x='Outlet_Location_Type', y='Outlet_Size')
-fig.show()
+# fig = px.scatter(data, x='Outlet_Size', y='Outlet_Type')
+# fig.show()
+# fig = px.scatter(data, x='Outlet_Location_Type', y='Outlet_Size')
+# fig.show()
 # from above scatter plot we can say if 'Supermarket type 2' and 'Supermarket type 3'
 # then it's always 'medium' in 'outlet size', if it's 'Grocery Store' then it's always 'Small',
 # if 'Outlet_Location_Type' is 'Tier 2' then it's always 'Small' in 'Outlet_Size'
@@ -85,9 +86,21 @@ data['Outlet_Size'] = data[['Outlet_Size', 'Outlet_Type', 'Outlet_Location_Type'
 
 # no missing values in DF
 
-# bar chart (Outlet_Type/Item_Outlet_Sales)
-# fig = px.scatter(data, x='Item_MRP', y='Item_Outlet_Sales')
+# box chart (Outlet_Size/Item_Outlet_Sales)
+# fig = px.box(data, x='Outlet_Size', y='Item_Outlet_Sales')
 # fig.show()
+# from above box plot, 'Medium' size outlet has most sales , followed by 'High' and 'Small' outlet
 
-fig = px.box(data, x='Outlet_Size', y='Item_Outlet_Sales')
-fig.show()
+data['Item_Fat_Content'].replace({'LF': 'Low Fat', 'low fat': 'Low Fat', 'reg': 'Regular'}, inplace=True)
+
+# fig = px.scatter(data, x="Outlet_Size", y="Outlet_Type", size="Item_Outlet_Sales", color="Item_MRP",
+#                  hover_name="Item_Outlet_Sales", size_max=90)
+# fig.show()
+# 'supermarket type3' which is 'Medium' in size has most sales, most items cost range between
+# 100 to 200, and some products worth '250 bucks' also got sold
+# High MRP items sold in 'Supermarket Type1' which is 'High' in size.
+# low range products sold in 'Supermarket Type1' which is 'Medium' in size
+# 'Supermarket Type1' which is 'Small' in size has sales of all range of products but store's total
+#                   sales is not so impressive
+
+print(data[data['Outlet_Type'] == 'Supermarket Type3']['Item_Outlet_Sales'].sum())
