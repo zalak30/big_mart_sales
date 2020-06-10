@@ -78,16 +78,11 @@ fig = px.box(data, x='Outlet_Size', y='Item_Outlet_Sales')
 fig.show()
 # from above box plot, 'Medium' size outlet has most sales , followed by 'High' and 'Small' outlet
 
-# scatter plot (Outlet_Size/Item_Outlet_Sales)
-fig = px.scatter(data, x="Outlet_Size", y="Outlet_Type", size="Item_Outlet_Sales", color="Item_MRP",
-                 hover_name="Item_Outlet_Sales", size_max=60)
-fig.show()
-
 # scatter chart('Outlet_Size' / 'Outlet_Size')
 fig = px.scatter(data, x='Outlet_Size', y='Outlet_Type')
 fig.show()
 # from above scatter plot, if 'Supermarket type 2' and 'Supermarket type 3'
-# then it's always 'medium' in 'outlet size', if it's 'Grocery Store' then it's always 'Small',
+# then it's always 'medium' in 'outlet size', if it's 'Grocery Store' then it's always 'Small'
 
 # scatter chart('Outlet_Location_Type' / 'Outlet_Size')
 fig = px.scatter(data, x='Outlet_Location_Type', y='Outlet_Size')
@@ -95,6 +90,10 @@ fig.show()
 # if 'Outlet_Location_Type' is 'Tier 2' then it's always 'Small' in 'Outlet_Size', if 'Outlet_size' is 'High' then it's
 # always 'Tier3'
 
+# scatter plot (Outlet_Size/Item_Outlet_Sales)
+fig = px.scatter(data, x="Outlet_Size", y="Outlet_Type", size="Item_Outlet_Sales", color="Item_MRP",
+                 hover_name="Item_Outlet_Sales", size_max=60)
+fig.show()
 # 'supermarket type3' which is 'Medium' in size has most sales, most items cost range between
 # 100 to 200, and some products worth '250 bucks' also got sold
 # Most High MRP items sold in 'Supermarket Type1' which is 'High' in size.
