@@ -19,6 +19,9 @@ mrp distribute between 30 to 270
 'Medium' size outlet has most sales , followed by 'High' and 'Small' outlet
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/sales%20vs%20size.png)
 #### Outlet_Type vs Outlet_Size(Scatter)
-from above scatter plot, if 'Supermarket type 2' and 'Supermarket type 3'
-then it's always 'medium' in 'outlet size', if it's 'Grocery Store' then it's always 'Small'
+1. 'supermarket type3' which is 'Medium' in size has most sales, most items cost range between 100 to 200, and some products worth '250 bucks' also got sold
+2. Most High MRP items sold in 'Supermarket Type1' which is 'High' in size.
+3. low range products sold in 'Supermarket Type1' which is 'Medium' in size
+4. 'Supermarket Type1' which is 'Small' in size has sales of all range of products but store's total
+sales is not so impressive
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/type%20vs%20size_scatter.png)
