@@ -1,7 +1,7 @@
-# big_mart_sales
 
 
-# Outlet_Size vs Outlet_Location_Type
+
+#### Outlet_Size vs Outlet_Location_Type
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/Location_type%20vs%20Size.png)
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/Outlet_type%20vs%20Size.png)
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/heatmap.png)
