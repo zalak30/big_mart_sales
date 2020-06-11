@@ -14,17 +14,16 @@ if 'Supermarket type 2' and 'Supermarket type 3'then it's always 'medium' in 'ou
 ### MRP Distribution
 MRP distribute between 30 to 270 bucks
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/mrp_distribution.png)
-### Item_Outlet_Sales vs Outlet_Size(Box)
-'Medium' size outlet has most sales , followed by 'High' and 'Small' outlet
-![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/sales%20vs%20size.png)
-### Outlet_Type vs Outlet_Size(Scatter)
-1. 'supermarket type3' which is 'Medium' in size has most sales, most items cost range between 100 to 200, and some products worth '250 bucks' also got sold
-2. Most High MRP items sold in 'Supermarket Type1' which is 'High' in size.
-3. low range products sold in 'Supermarket Type1' which is 'Medium' in size
-4. 'Supermarket Type1' which is 'Small' in size has sales of all range of products but store's total
-sales is not so impressive
-![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/type%20vs%20size_scatter.png)
+### Total sales by Outlet Type and Outlet Size
+1. 'Supermarket Type1' has most sell followed by 'Type3', 'Type2' and 'Grocery Store'
+2. In 'SupermarketType1' 'Small' size outlet has most sales. 'Medium' and 'High' outlet have almost same sale
+3. In all medium size outlet 'Supermarket Type3' has most sell, followed by 'Type1' and 'type2'
+4. 'Grocery Store' has least sale with 'Small' outlet size
+![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/Total%20sales%20by%20outlet%20type%20and%20size.PNG)
 ### Total sales by Item Type, Outlet Type, Outlet Size
 ![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/Total%20sales%20by%20Item%20Type%2C%20Outlet%20Type%2C%20Outlet%20Size.PNG)
-### Total sales by Outlet Type and Outlet Size
-![alt text](https://github.com/zalak30/big_mart_sales/blob/master/Visualization/Total%20sales%20by%20outlet%20type%20and%20size.PNG)
+1. By 'Item Type' 'Fruits and Vegetables' has most sales (2,820,059.817) followed by 'Snack Foods', 'Household', 'Frozen Food',
+   'Dairy','Canned','Baking Goods','Health and Hygiene', 'Meat','Soft Drinks','Breads',
+   'Hard Drinks','Starchy Foods','Others','Breakfast' and least selling food is 'Seafood',
+2. In all category most sales in 'Supermarket Type1' which is small in 'outletsize'
+   followed by 'Supermarket Type3','Supermarket Type2' and 'Grocery Store'
