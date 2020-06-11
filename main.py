@@ -108,7 +108,7 @@ fig = px.sunburst(
     data_frame=data,
     path=['Item_Type', 'Outlet_Type', 'Outlet_Size'],
     values='Item_Outlet_Sales',
-    title="TOtal sales by 'Item Type', 'Outlet Type', 'Outlet Size'",
+    title="Total sales by 'Item Type', 'Outlet Type', 'Outlet Size'",
     height=700
 )
 fig.show()
